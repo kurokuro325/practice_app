@@ -11,4 +11,8 @@ class Lure < ActiveHash::Base
     { id: 9, name: 'リップレスミノー' },
     { id: 10, name: 'その他' }
   ]
+
+  include ActiveHash::Associations
+  has_many :practices
+
   end
