@@ -1,0 +1,16 @@
+<h1>魚の投稿の一覧</h1>
+<%= link_to "投稿する", new_practice_path, class:"post" %>
+
+<% @practices.each do |practice| %>
+  <div class="practice">
+    <div class="practice-lure">
+      <%= practice.lure.name %>
+    </div>
+    <div class="practice-title">
+      <%= practice.title %>
+    </div>
+    <div class="practice-text">
+      <%= practice.text %>
+    </div>
+  </div>
+<% end %>
