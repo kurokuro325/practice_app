@@ -1,7 +1,7 @@
 class PracticesController < ApplicationController
 
   def index
-    @practices = Practice.order("created_at DESC")
+    @practices = Practice.all.order("created_at DESC")
   end
 
   def new
@@ -20,7 +20,7 @@ class PracticesController < ApplicationController
   private
 
   def practice_params
-    params.require(:practice).permit(:title, :text, :lure_id, :image)
+    params.require(:practice).permit(:title, :text, :lure_id ,:image)
   end
 
 end
