@@ -1,9 +1,6 @@
-<%= form_with model: @practice, url:practices_path, local: true do |f| %>
-  <div class="practice-box">
+<div class="practice-box">
     魚を投稿する
-    <%= f.text_field :title, class:"title", placeholder:"タイトル" %>
-    <%= f.text_area :text, class:"text", placeholder:"テキスト" %>
-    <%= f.collection_select(:lure_id, Lure.all, :id, :name, {}, {class:"lure-select"}) %>
-    <%= f.submit "投稿する" ,class:"btn" %>
+    <%# 部分テンプレートでフォームを表示する %>
+    <%= render partial: "form", locals: { practice: @practice } %>
+    
   </div>
-<% end %>

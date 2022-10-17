@@ -4,13 +4,20 @@
 <% @practices.each do |practice| %>
   <div class="practice">
     <div class="practice-lure">
+    ルアー名
       <%= practice.lure.name %>
     </div>
     <div class="practice-title">
+    魚の名前
       <%= practice.title %>
     </div>
     <div class="practice-text">
+    場所や感想など
       <%= practice.text %>
+    </div>
+    <div class="practice-image">
+    魚の画像
+      <%= image_tag practice.image.variant(resize: '500x500'), class: 'practice-image' if practice.image.attached? %>
     </div>
   </div>
 <% end %>
